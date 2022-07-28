@@ -4,12 +4,12 @@ import css from "../assets/css.png";
 import javascript from "../assets/javascript.png";
 import reactImage from "../assets/react.png";
 import nextjs from "../assets/nextjs.png";
-// import graphql from "../assets/graphql.png";
 import github from "../assets/github.png";
 import tailwind from "../assets/tailwind.png";
 import bootstrap from "../assets/bootstrap.png"
-import sass from "../assets/Sass.png"
-// import Fade from 'react-reveal/Fade';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Experience = () => {
@@ -62,14 +62,12 @@ const Experience = () => {
           title: "Bootstrap",
           style: "shadow-blue-400",
         },
-        
-        // {
-        //   id: 7,
-        //   src: sass,
-        //   title: "Sass",
-        //   style: "shadow-pink-400",
-        // },
       ];
+      AOS.init({
+        delay: 200,
+        duration: 1200,
+        once: false
+      })
   return (
     <div 
         name='experience'
@@ -82,11 +80,11 @@ const Experience = () => {
             </div>
 
            
-            <div className='w-full grid grid-cols-2 sm:grid-cols-3 text-center py-8 px-6 sm:gap-8'>
+            <div data-aos="fade-up" className='w-full grid grid-cols-2 gap-4 sm:grid-cols-3 text-center py-8 px-6 sm:gap-8'>
                 {techs.map(({id, src, title, style}) => (
 
                 <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-                    <img src={src} alt='' className='w-20 mx-auto' />
+                    <img src={src} alt='pictures' className='w-20 mx-auto' />
                     <p className='mt-4'>{title}</p>
                 </div>
                 ))}

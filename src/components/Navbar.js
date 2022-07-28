@@ -11,19 +11,23 @@ const Navbar = () => {
         },
         {
             id: 2,
-            link: 'portfolio'
+            link: 'Certification'
         },
         {
             id: 3,
-            link: 'experience'
+            link: 'portfolio'
         },
         {
             id: 4,
+            link: 'experience'
+        },
+        {
+            id: 5,
             link: 'contact'
         },
     ]
   return (
-    <div className='flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed'>
+    <div className='flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-50'>
     <div>
         <h1 className=' text-3xl font-signature ml-2'>laith</h1>
     </div>

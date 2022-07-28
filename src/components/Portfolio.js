@@ -5,7 +5,8 @@ import coffe from "../assets/portfolio/coffe.png";
 import laith_design from "../assets/portfolio/laith_design.png";
 import laith_web_developer from "../assets/portfolio/laith_web_developer.png";
 import bondi from "../assets/portfolio/bondi.png";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Portfolio = () => {
   const portfolio = [
@@ -13,7 +14,7 @@ const Portfolio = () => {
       id: 1,
       src: fruty,
       href: 'https://laithahmed9.github.io/fruit/',
-      code: 'https://github.com/LaithAhmed9/fruit'
+      code: 'https://github.com/LaithAhmed9/fruit',
     },
     {
       id: 2,
@@ -47,6 +48,11 @@ const Portfolio = () => {
     },
    
   ]
+  AOS.init({
+    delay: 200,
+    duration: 1200,
+    once: false
+  })
   return (
     <div 
       name='portfolio' 
@@ -57,11 +63,11 @@ const Portfolio = () => {
           <p className='py-6'>Check out some of my work right here</p>
         </div>
       
-          <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
+          <div data-aos="fade-up" className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
           {portfolio.map(({id, src, href, code}) => (
           
           <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
-            <img src={src} alt='' className='rounded-md duration-200 hover:scale-105'/>
+            <img src={src} alt='pic' className='rounded-md duration-200 hover:scale-105'/>
             <div className='flex justify-around py-4'>
             <a href={href} 
                className='hover:bg-slate-700 p-1 rounded duration-300'
